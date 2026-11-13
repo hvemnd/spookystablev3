@@ -1,0 +1,565 @@
+# Spooky Stable v3 "Recess" in the host simulator: School mode (design 12's definition of done).
+#   app/build/host/spooky_host app/tests/school.txt app/build/host
+# The Bell, routing, direct entry, every learning toy's free play and its challenges (answered right and wrong with
+# the app's own "answer" hook), the pacing rules, adaptive difficulty, stickers and the book, the parent's switch,
+# and School mode's settings across a power cycle.
+wait 700
+expect toy 0
+expect school 0
+# --- the Bell: OCT- held. A tap is still the preset back
+tap OCT-
+wait 100
+expect preset 4
+tap OCT+
+wait 100
+expect preset 0
+press OCT-
+wait 800
+release OCT-
+wait 200
+expect school 1
+expect preset 0
+expect toy 9
+expect stickers >0
+shot v3_bell.png
+# FX, ENV, GLO, ARP keep their play toys in School mode (with the apple)
+tap FX
+wait 300
+expect toy 3
+tap GLO
+wait 300
+expect toy 5
+tap ARP
+wait 300
+expect toy 6
+shot v3_apple_toilet.png
+# the routed four (EDIT's is opened below, its first visit)
+tap HOME
+wait 300
+expect toy 9
+tap LFO
+wait 300
+expect toy 10
+tap SEQ
+wait 300
+expect toy 11
+# recess: the Bell again, back to the play toy and Play mode
+press OCT-
+wait 800
+release OCT-
+wait 300
+expect school 0
+expect toy 7
+tap EDIT
+wait 300
+expect toy 1
+# --- direct entry: hold a toy's own button 1.5 s (the 0.7 s cleanup sweep comes first)
+press EDIT
+wait 900
+expect cleans >0
+expect toy 1
+wait 800
+release EDIT
+wait 300
+expect toy 8
+expect school 1
+expect discover >0
+# --- Poop Parade, first visit: free play only (no invitation however long she plays)
+expect learn_phase 1
+tapkey 0
+wait 250
+tapkey 3
+wait 250
+tapkey 10
+wait 250
+tapkey 21
+wait 250
+expect steps 4
+tapkey 21
+wait 250
+expect steps 3
+tapkey 21
+wait 250
+expect steps 4
+shot v3_parade_edit.png
+# Play: she marches, and every column with a poop is stomped
+tapkey 24
+wait 300
+expect playing 1
+wait 2500
+expect stomps >3
+shot v3_parade_march.png
+# live record while she marches: it sneaks in
+tapkey 6
+wait 100
+expect steps 5
+tap PLAY
+wait 200
+expect playing 0
+tap PLAY
+wait 200
+expect playing 1
+tap PLAY
+wait 2000
+expect playing 0
+expect learn_phase 1
+# a held step: the long strain, a bigger poop (no change to the pattern)
+key 15 down 100 40
+wait 700
+key 15 up
+wait 300
+expect steps 6
+# 16 columns: the clear key's tap turns the page
+turn K4 1
+wait 100
+tapkey 25
+wait 200
+expect page 1
+tapkey 0
+wait 200
+expect steps 7
+tapkey 25
+wait 200
+expect page 0
+tapkey 0
+wait 200
+expect steps 6
+turn K4 -1
+wait 300
+# --- the Challenge key: Copy Me. Her parade is put aside, the unicorn shows a pattern
+tapkey 26
+wait 100
+expect learn_phase 2
+expect learn_kind 0
+expect stashed 1
+wait 3600
+expect learn_phase 3
+shot v3_copy_turn.png
+# a wrong try: a soft retry, the parade is still hers to finish
+answer wrong
+wait 400
+expect learn_misses 1
+expect learn_phase 3
+answer
+wait 1500
+expect learn_phase 4
+shot v3_copy_cheer.png
+wait 1000
+expect learn_phase 1
+# the victory march, then her own parade comes back
+wait 2200
+expect playing 0
+expect stashed 0
+expect steps 6
+# --- Count Them: every press touches the next poop
+tapkey 26
+wait 100
+expect learn_kind 1
+wait 3800
+expect learn_phase 3
+answer
+wait 1000
+expect learn_phase 4
+wait 4000
+expect steps 6
+# --- Left to Right
+tapkey 26
+wait 100
+expect learn_kind 2
+wait 3200
+expect learn_phase 3
+answer wrong
+wait 300
+expect learn_misses 1
+answer
+wait 1400
+expect learn_phase 4
+wait 4000
+expect learn_phase 1
+expect steps 6
+# busy with something else for 3 s (Play, Play, Play during Copy Me): the challenge dissolves
+tapkey 26
+wait 3800
+tapkey 24
+wait 1200
+tapkey 24
+wait 1200
+tapkey 24
+wait 1200
+expect learn_phase 1
+expect stashed 0
+tapkey 24
+wait 300
+expect steps 6
+# idle in a challenge (Count Them): shown again at 8 s; still nothing: let go quietly, her parade back
+tapkey 26
+wait 3800
+expect learn_phase 3
+wait 9000
+expect learn_phase 3
+wait 18000
+expect learn_phase 1
+expect stashed 0
+expect steps 6
+# --- the second visit: an invitation comes by itself after Play twice and a calm moment
+tap HOME
+wait 300
+tap EDIT
+wait 300
+expect toy 8
+tapkey 2
+wait 200
+tapkey 2
+wait 200
+tapkey 24
+wait 600
+tapkey 24
+wait 300
+tapkey 5
+wait 2000
+expect learn_phase 2
+wait 4000
+answer
+wait 6000
+expect learn_phase 1
+# adaptive: answering right again and again moves the level up (and it is kept)
+tapkey 26
+wait 4200
+answer
+wait 7000
+tapkey 26
+wait 4200
+answer
+wait 7000
+tapkey 26
+wait 4200
+answer
+wait 7000
+expect learn_level >0
+expect learn_wins >5
+# --- Fart Mix-Up
+tap HOME
+wait 400
+expect toy 9
+key 0 down 100 40
+wait 200
+expect fm_l 1
+key 14 down 100 40
+wait 400
+expect fm_r 1
+expect cloud 1
+expect interval 12
+shot v3_mixup_octave.png
+turn ALGO 20
+wait 500
+shot v3_mixup_fm.png
+expect voices <13
+turn K4 2
+wait 300
+expect interval 12
+turn K4 1
+wait 300
+expect interval 19
+shot v3_mixup_bumps.png
+turn K4 -3
+turn ALGO -20
+key 14 up
+key 0 up
+wait 800
+expect fm_l 0
+expect fm_r 0
+expect cloud 0
+# the cloud goes cross-eyed for a second
+key 0 down 100 40
+key 16 down 100 40
+wait 400
+expect cloud 3
+expect interval 14
+shot v3_mixup_cross.png
+key 16 up
+key 0 up
+wait 800
+# a tap of HOME (her own button) asks for a challenge: Make the Cloud Happy
+tap HOME
+wait 100
+expect learn_phase 2
+wait 1200
+expect learn_phase 3
+answer wrong
+wait 1400
+expect learn_misses 1
+wait 600
+answer
+wait 1200
+expect learn_phase 4
+wait 2500
+# Copy the Interval
+tap HOME
+wait 100
+expect learn_kind 1
+wait 2800
+expect learn_phase 3
+answer
+wait 1200
+expect learn_phase 4
+wait 2500
+# --- Pee Piano: high keys reach high rungs
+tap LFO
+wait 400
+expect toy 10
+key 26 down 100 40
+wait 700
+expect stream 1
+expect rung 4
+shot v3_piano_high.png
+key 26 up
+wait 700
+key 0 down 100 40
+wait 700
+expect rung 0
+key 0 up
+wait 700
+expect stream 0
+# Copy the Tune
+tap LFO
+wait 100
+expect learn_kind 0
+wait 2600
+expect learn_phase 3
+answer wrong
+wait 1200
+expect learn_misses 1
+wait 800
+answer
+wait 4300
+expect learn_phase 4
+wait 2000
+# Fill the Bucket: too much tips it over (a giggle, no penalty), then to the line
+tap LFO
+wait 100
+expect learn_kind 1
+expect bucket 1
+wait 1400
+expect learn_phase 3
+answer wrong
+wait 5000
+expect learn_misses 1
+expect fill <50
+wait 800
+answer
+wait 3500
+expect learn_phase 4
+shot v3_piano_bucket.png
+wait 2000
+expect bucket 0
+# --- Booger Wall: Match (a wall is a round)
+tap SEQ
+wait 400
+expect toy 11
+expect wall_game 0
+answer
+wait 3000
+expect wall_found 0
+expect wall_cols >1
+shot v3_wall_match.png
+# Count
+turn ALGO 1
+wait 300
+expect wall_game 1
+tapkey 26
+wait 1500
+expect wall_on 3
+tap SEQ
+wait 2400
+expect learn_phase 3
+answer wrong
+wait 300
+expect learn_misses 1
+wait 1200
+answer
+wait 300
+expect learn_phase 4
+shot v3_wall_count.png
+wait 2500
+# Sort
+turn ALGO 1
+wait 300
+expect wall_game 2
+tap SEQ
+wait 300
+expect learn_phase 3
+answer
+wait 2600
+expect learn_phase 4
+wait 2000
+# --- the Sticker Book: OCT- held 2 s; keys touch stickers; any button closes it
+press OCT-
+wait 2100
+release OCT-
+wait 400
+expect book 1
+expect school 0
+tapkey 0
+wait 200
+tapkey 1
+wait 300
+shot v3_book.png
+tap SEQ
+wait 300
+expect book 0
+expect toy 7
+expect stickers >12
+press OCT-
+wait 800
+release OCT-
+wait 300
+expect school 1
+expect toy 11
+# --- School mode, the stickers and the learning kept across a power cycle (and School mode starts in Mix-Up)
+wait 3000
+power
+wait 800
+expect school 1
+expect toy 9
+expect stickers >12
+tap EDIT
+wait 300
+expect toy 8
+expect steps 7
+expect learn_level >0
+# --- the parent's switch: OCT- held within 5 s of power-on, K1 turned up: no challenges at all
+power
+wait 400
+press OCT-
+wait 100
+turn K1 1
+wait 1200
+release OCT-
+wait 300
+expect learn_off 1
+expect school 1
+expect preset 0
+tap EDIT
+wait 300
+tapkey 26
+wait 300
+expect learn_phase 1
+tapkey 1
+wait 200
+tapkey 24
+wait 500
+tapkey 24
+wait 3000
+expect learn_phase 1
+# (the toy is still a toy: the Challenge key twirls her and plays a fill)
+tapkey 26
+wait 150
+expect voices >0
+wait 500
+power
+wait 400
+press OCT-
+wait 100
+turn K1 1
+wait 1200
+release OCT-
+wait 300
+expect learn_off 0
+tap EDIT
+wait 300
+tapkey 26
+wait 300
+expect learn_phase 2
+# --- the draw budgets (design 10.4): a full grid of 24 poops marching, under ~200 shapes; the ribbons under ~150
+tapkey 26
+wait 4200
+answer
+wait 7000
+key 25 down 100 40
+wait 700
+key 25 up
+wait 500
+expect steps 0
+tapkey 0
+wait 110
+tapkey 1
+wait 110
+tapkey 2
+wait 110
+tapkey 3
+wait 110
+tapkey 4
+wait 110
+tapkey 5
+wait 110
+tapkey 6
+wait 110
+tapkey 7
+wait 110
+tapkey 8
+wait 110
+tapkey 9
+wait 110
+tapkey 10
+wait 110
+tapkey 11
+wait 110
+tapkey 12
+wait 110
+tapkey 13
+wait 110
+tapkey 14
+wait 110
+tapkey 15
+wait 110
+tapkey 16
+wait 110
+tapkey 17
+wait 110
+tapkey 18
+wait 110
+tapkey 19
+wait 110
+tapkey 20
+wait 110
+tapkey 21
+wait 110
+tapkey 22
+wait 110
+tapkey 23
+wait 110
+wait 700
+expect steps 24
+draws_reset
+tapkey 24
+wait 3000
+expect part_draws <200
+tapkey 24
+wait 300
+tap HOME
+wait 300
+draws_reset
+key 0 down 100 40
+key 20 down 100 40
+turn ALGO 20
+wait 1200
+expect part_draws <150
+key 0 up
+key 20 up
+wait 500
+# --- a v2 unit's settings are migrated: everything it knew kept, School mode's new fields zero
+fake_v2
+power
+wait 800
+expect school 0
+expect toy 0
+expect vol 3
+expect mood 2
+expect unlocked 2
+expect stickers 0
+expect learn_off 0
+tap EDIT
+wait 300
+expect toy 1
+expect preset 2
+expect k2 11

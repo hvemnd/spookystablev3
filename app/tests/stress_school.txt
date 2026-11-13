@@ -1,0 +1,1053 @@
+# Spooky Stable v3's School mode under stress: base/tools/build.py app --host, then
+#   app/build/host/spooky_host app/tests/stress_school.txt app/build/host
+# Every learning toy mashed at full volume and full MASTER, chaos up, every key, held chords, challenges started
+# and stomped through: the 70 % ceiling must hold, flashes stay 400 ms apart, voices and particles in their pools,
+# and the draw budgets (design 10.4): the Parade's grid under ~200 shapes, the ribbons under ~150.
+wait 700
+master 4096
+turn K1 10
+wait 50
+expect vol 10
+press OCT-
+wait 800
+release OCT-
+wait 300
+expect school 1
+peakreset
+draws_reset
+tap EDIT
+wait 400
+turn PRESET 20
+turn K2 20
+tapkey 24
+strum 0 15 8
+strum 15 0 8
+strum 0 15 30
+tapkey 14 119
+wait 33
+tapkey 16 84
+wait 16
+tapkey 25 125
+wait 35
+tapkey 20 83
+wait 11
+tapkey 14 98
+wait 14
+tapkey 2 65
+wait 43
+tapkey 12 117
+wait 46
+tapkey 23 80
+wait 44
+tapkey 0 127
+wait 9
+tapkey 1 64
+wait 17
+tapkey 7 63
+wait 54
+tapkey 14 101
+wait 33
+tapkey 18 85
+wait 38
+tapkey 7 97
+wait 36
+tapkey 0 70
+wait 34
+tapkey 20 95
+wait 31
+tapkey 17 70
+wait 50
+tapkey 8 100
+wait 53
+tapkey 7 125
+wait 23
+tapkey 0 68
+wait 41
+tapkey 24 73
+wait 30
+tapkey 3 97
+wait 29
+tapkey 2 62
+wait 59
+tapkey 21 60
+wait 18
+tapkey 6 66
+wait 35
+tapkey 12 110
+wait 31
+tapkey 2 85
+wait 54
+tapkey 21 94
+wait 26
+tapkey 2 99
+wait 26
+tapkey 0 112
+wait 53
+tapkey 3 77
+wait 20
+tapkey 22 72
+wait 5
+tapkey 1 119
+wait 56
+tapkey 15 82
+wait 48
+tapkey 17 84
+wait 33
+tapkey 16 84
+wait 51
+tapkey 24 76
+wait 31
+tapkey 20 109
+wait 12
+tapkey 12 113
+wait 18
+tapkey 0 94
+wait 60
+key 0 down 127 60
+key 9 down 127 60
+key 14 down 127 60
+key 20 down 127 60
+key 26 down 127 60
+wait 1200
+key 0 up
+key 9 up
+key 14 up
+key 20 up
+key 26 up
+key 25 down 127 60
+wait 80
+key 18 down 127 60
+wait 80
+key 9 down 127 60
+wait 80
+key 0 down 127 60
+wait 80
+key 6 down 127 60
+wait 80
+key 5 down 127 60
+wait 80
+wait 400
+key 0 up
+key 1 up
+key 2 up
+key 3 up
+key 4 up
+key 5 up
+key 6 up
+key 7 up
+key 8 up
+key 9 up
+key 10 up
+key 11 up
+key 12 up
+key 13 up
+key 14 up
+key 15 up
+key 16 up
+key 17 up
+key 18 up
+key 19 up
+key 20 up
+key 21 up
+key 22 up
+key 23 up
+key 24 up
+key 25 up
+key 26 up
+tap EDIT
+wait 300
+tapkey 12 127
+wait 11
+tapkey 1 127
+wait 14
+tapkey 6 127
+wait 33
+tapkey 8 127
+wait 5
+tapkey 24 127
+wait 26
+tapkey 26 127
+wait 23
+tapkey 12 127
+wait 9
+tapkey 2 127
+wait 10
+tapkey 6 127
+wait 20
+tapkey 0 127
+wait 28
+tapkey 11 127
+wait 34
+tapkey 4 127
+wait 35
+tapkey 26 127
+wait 13
+tapkey 12 127
+wait 16
+tapkey 20 127
+wait 14
+tapkey 9 127
+wait 19
+tapkey 26 127
+wait 20
+tapkey 23 127
+wait 17
+tapkey 5 127
+wait 40
+tapkey 6 127
+wait 29
+tapkey 15 127
+wait 10
+tapkey 13 127
+wait 8
+tapkey 3 127
+wait 11
+tapkey 1 127
+wait 37
+tapkey 8 127
+wait 20
+tapkey 23 127
+wait 30
+tapkey 8 127
+wait 31
+tapkey 26 127
+wait 36
+tapkey 9 127
+wait 38
+tapkey 5 127
+wait 9
+wait 500
+expect voices <13
+expect particles <201
+expect flash_gap >399
+expect part_draws <200
+draws_reset
+tap HOME
+wait 400
+turn PRESET 20
+turn ALGO 20
+turn K4 3
+strum 0 15 8
+strum 15 0 8
+strum 0 15 30
+tapkey 4 89
+wait 35
+tapkey 17 69
+wait 22
+tapkey 6 86
+wait 52
+tapkey 0 68
+wait 22
+tapkey 13 117
+wait 20
+tapkey 1 65
+wait 16
+tapkey 9 107
+wait 38
+tapkey 18 76
+wait 10
+tapkey 11 77
+wait 33
+tapkey 10 126
+wait 42
+tapkey 4 64
+wait 6
+tapkey 15 105
+wait 49
+tapkey 9 64
+wait 6
+tapkey 19 69
+wait 35
+tapkey 2 99
+wait 25
+tapkey 4 69
+wait 9
+tapkey 14 107
+wait 52
+tapkey 1 76
+wait 55
+tapkey 10 105
+wait 10
+tapkey 21 120
+wait 9
+tapkey 13 63
+wait 60
+tapkey 15 61
+wait 44
+tapkey 21 108
+wait 29
+tapkey 18 61
+wait 43
+tapkey 2 70
+wait 10
+tapkey 20 74
+wait 21
+tapkey 13 102
+wait 29
+tapkey 23 118
+wait 33
+tapkey 14 70
+wait 38
+tapkey 24 125
+wait 6
+tapkey 9 71
+wait 35
+tapkey 0 89
+wait 49
+tapkey 3 123
+wait 54
+tapkey 19 122
+wait 21
+tapkey 0 107
+wait 24
+tapkey 4 85
+wait 38
+tapkey 5 103
+wait 47
+tapkey 14 123
+wait 20
+tapkey 10 111
+wait 47
+tapkey 8 85
+wait 45
+key 0 down 127 60
+key 9 down 127 60
+key 14 down 127 60
+key 20 down 127 60
+key 26 down 127 60
+wait 1200
+key 0 up
+key 9 up
+key 14 up
+key 20 up
+key 26 up
+key 13 down 127 60
+wait 80
+key 25 down 127 60
+wait 80
+key 25 down 127 60
+wait 80
+key 24 down 127 60
+wait 80
+key 6 down 127 60
+wait 80
+key 6 down 127 60
+wait 80
+wait 400
+key 0 up
+key 1 up
+key 2 up
+key 3 up
+key 4 up
+key 5 up
+key 6 up
+key 7 up
+key 8 up
+key 9 up
+key 10 up
+key 11 up
+key 12 up
+key 13 up
+key 14 up
+key 15 up
+key 16 up
+key 17 up
+key 18 up
+key 19 up
+key 20 up
+key 21 up
+key 22 up
+key 23 up
+key 24 up
+key 25 up
+key 26 up
+tap HOME
+wait 300
+tapkey 12 127
+wait 19
+tapkey 18 127
+wait 25
+tapkey 6 127
+wait 13
+tapkey 4 127
+wait 36
+tapkey 11 127
+wait 7
+tapkey 22 127
+wait 9
+tapkey 8 127
+wait 15
+tapkey 3 127
+wait 33
+tapkey 15 127
+wait 22
+tapkey 6 127
+wait 31
+tapkey 12 127
+wait 38
+tapkey 15 127
+wait 25
+tapkey 22 127
+wait 33
+tapkey 10 127
+wait 9
+tapkey 26 127
+wait 7
+tapkey 8 127
+wait 7
+tapkey 21 127
+wait 22
+tapkey 18 127
+wait 27
+tapkey 9 127
+wait 6
+tapkey 20 127
+wait 13
+tapkey 12 127
+wait 34
+tapkey 6 127
+wait 6
+tapkey 24 127
+wait 22
+tapkey 7 127
+wait 14
+tapkey 25 127
+wait 8
+tapkey 20 127
+wait 12
+tapkey 14 127
+wait 11
+tapkey 20 127
+wait 39
+tapkey 20 127
+wait 28
+tapkey 2 127
+wait 17
+wait 500
+expect voices <13
+expect particles <201
+expect flash_gap >399
+key 0 down 127 60
+key 20 down 127 60
+wait 1500
+key 0 up
+key 20 up
+expect part_draws <150
+draws_reset
+tap LFO
+wait 400
+turn PRESET 20
+turn K4 2
+strum 0 15 8
+strum 15 0 8
+strum 0 15 30
+tapkey 6 120
+wait 21
+tapkey 5 61
+wait 53
+tapkey 15 64
+wait 16
+tapkey 7 94
+wait 54
+tapkey 11 126
+wait 37
+tapkey 19 80
+wait 30
+tapkey 25 88
+wait 10
+tapkey 13 109
+wait 13
+tapkey 14 118
+wait 17
+tapkey 20 60
+wait 29
+tapkey 17 124
+wait 55
+tapkey 26 103
+wait 34
+tapkey 10 86
+wait 11
+tapkey 23 75
+wait 18
+tapkey 7 109
+wait 10
+tapkey 9 101
+wait 21
+tapkey 22 62
+wait 27
+tapkey 16 70
+wait 7
+tapkey 14 103
+wait 40
+tapkey 13 95
+wait 36
+tapkey 0 87
+wait 56
+tapkey 2 114
+wait 56
+tapkey 1 82
+wait 39
+tapkey 10 77
+wait 35
+tapkey 4 126
+wait 51
+tapkey 16 116
+wait 36
+tapkey 18 71
+wait 53
+tapkey 7 116
+wait 38
+tapkey 17 97
+wait 58
+tapkey 23 81
+wait 38
+tapkey 16 92
+wait 24
+tapkey 21 108
+wait 59
+tapkey 19 86
+wait 24
+tapkey 4 127
+wait 22
+tapkey 18 123
+wait 17
+tapkey 13 74
+wait 37
+tapkey 0 108
+wait 6
+tapkey 17 65
+wait 38
+tapkey 12 75
+wait 36
+tapkey 2 81
+wait 9
+key 0 down 127 60
+key 9 down 127 60
+key 14 down 127 60
+key 20 down 127 60
+key 26 down 127 60
+wait 1200
+key 0 up
+key 9 up
+key 14 up
+key 20 up
+key 26 up
+key 17 down 127 60
+wait 80
+key 14 down 127 60
+wait 80
+key 13 down 127 60
+wait 80
+key 25 down 127 60
+wait 80
+key 12 down 127 60
+wait 80
+key 8 down 127 60
+wait 80
+wait 400
+key 0 up
+key 1 up
+key 2 up
+key 3 up
+key 4 up
+key 5 up
+key 6 up
+key 7 up
+key 8 up
+key 9 up
+key 10 up
+key 11 up
+key 12 up
+key 13 up
+key 14 up
+key 15 up
+key 16 up
+key 17 up
+key 18 up
+key 19 up
+key 20 up
+key 21 up
+key 22 up
+key 23 up
+key 24 up
+key 25 up
+key 26 up
+tap LFO
+wait 300
+tapkey 7 127
+wait 35
+tapkey 15 127
+wait 13
+tapkey 10 127
+wait 32
+tapkey 26 127
+wait 35
+tapkey 16 127
+wait 25
+tapkey 3 127
+wait 17
+tapkey 13 127
+wait 6
+tapkey 8 127
+wait 13
+tapkey 22 127
+wait 6
+tapkey 1 127
+wait 17
+tapkey 4 127
+wait 19
+tapkey 0 127
+wait 23
+tapkey 10 127
+wait 27
+tapkey 7 127
+wait 36
+tapkey 3 127
+wait 36
+tapkey 23 127
+wait 12
+tapkey 16 127
+wait 21
+tapkey 22 127
+wait 17
+tapkey 22 127
+wait 38
+tapkey 13 127
+wait 6
+tapkey 12 127
+wait 31
+tapkey 26 127
+wait 38
+tapkey 19 127
+wait 15
+tapkey 17 127
+wait 18
+tapkey 20 127
+wait 39
+tapkey 20 127
+wait 18
+tapkey 16 127
+wait 18
+tapkey 17 127
+wait 13
+tapkey 7 127
+wait 27
+tapkey 5 127
+wait 25
+wait 500
+expect voices <13
+expect particles <201
+expect flash_gap >399
+tap SEQ
+wait 400
+turn PRESET 20
+turn ALGO 1
+strum 0 15 8
+strum 15 0 8
+strum 0 15 30
+tapkey 19 100
+wait 17
+tapkey 6 84
+wait 11
+tapkey 4 90
+wait 13
+tapkey 23 71
+wait 21
+tapkey 12 72
+wait 32
+tapkey 26 113
+wait 39
+tapkey 25 76
+wait 17
+tapkey 12 62
+wait 11
+tapkey 6 105
+wait 57
+tapkey 11 74
+wait 50
+tapkey 16 103
+wait 37
+tapkey 21 84
+wait 56
+tapkey 2 121
+wait 11
+tapkey 0 64
+wait 53
+tapkey 17 125
+wait 41
+tapkey 15 78
+wait 17
+tapkey 5 74
+wait 18
+tapkey 5 80
+wait 23
+tapkey 21 72
+wait 42
+tapkey 1 77
+wait 48
+tapkey 14 69
+wait 53
+tapkey 3 101
+wait 30
+tapkey 14 114
+wait 37
+tapkey 11 115
+wait 18
+tapkey 19 107
+wait 5
+tapkey 20 65
+wait 59
+tapkey 6 83
+wait 31
+tapkey 14 106
+wait 52
+tapkey 11 111
+wait 17
+tapkey 19 81
+wait 11
+tapkey 16 61
+wait 25
+tapkey 2 111
+wait 41
+tapkey 19 84
+wait 37
+tapkey 18 103
+wait 56
+tapkey 24 93
+wait 22
+tapkey 3 80
+wait 57
+tapkey 12 77
+wait 26
+tapkey 17 107
+wait 54
+tapkey 13 83
+wait 30
+tapkey 6 83
+wait 9
+key 0 down 127 60
+key 9 down 127 60
+key 14 down 127 60
+key 20 down 127 60
+key 26 down 127 60
+wait 1200
+key 0 up
+key 9 up
+key 14 up
+key 20 up
+key 26 up
+key 25 down 127 60
+wait 80
+key 10 down 127 60
+wait 80
+key 9 down 127 60
+wait 80
+key 15 down 127 60
+wait 80
+key 3 down 127 60
+wait 80
+key 0 down 127 60
+wait 80
+wait 400
+key 0 up
+key 1 up
+key 2 up
+key 3 up
+key 4 up
+key 5 up
+key 6 up
+key 7 up
+key 8 up
+key 9 up
+key 10 up
+key 11 up
+key 12 up
+key 13 up
+key 14 up
+key 15 up
+key 16 up
+key 17 up
+key 18 up
+key 19 up
+key 20 up
+key 21 up
+key 22 up
+key 23 up
+key 24 up
+key 25 up
+key 26 up
+tap SEQ
+wait 300
+tapkey 11 127
+wait 8
+tapkey 7 127
+wait 22
+tapkey 21 127
+wait 24
+tapkey 10 127
+wait 18
+tapkey 21 127
+wait 30
+tapkey 18 127
+wait 16
+tapkey 17 127
+wait 9
+tapkey 12 127
+wait 37
+tapkey 15 127
+wait 18
+tapkey 22 127
+wait 12
+tapkey 24 127
+wait 30
+tapkey 18 127
+wait 6
+tapkey 3 127
+wait 11
+tapkey 23 127
+wait 20
+tapkey 8 127
+wait 33
+tapkey 12 127
+wait 37
+tapkey 1 127
+wait 17
+tapkey 20 127
+wait 29
+tapkey 0 127
+wait 11
+tapkey 8 127
+wait 21
+tapkey 8 127
+wait 26
+tapkey 17 127
+wait 39
+tapkey 16 127
+wait 31
+tapkey 16 127
+wait 11
+tapkey 20 127
+wait 33
+tapkey 25 127
+wait 9
+tapkey 17 127
+wait 7
+tapkey 12 127
+wait 15
+tapkey 12 127
+wait 35
+tapkey 5 127
+wait 36
+wait 500
+expect voices <13
+expect particles <201
+expect flash_gap >399
+tap SEQ
+wait 400
+turn PRESET 20
+turn ALGO 1
+turn K2 20
+strum 0 15 8
+strum 15 0 8
+strum 0 15 30
+tapkey 17 67
+wait 32
+tapkey 15 113
+wait 23
+tapkey 16 111
+wait 43
+tapkey 9 106
+wait 38
+tapkey 9 121
+wait 46
+tapkey 8 96
+wait 47
+tapkey 22 97
+wait 6
+tapkey 0 91
+wait 42
+tapkey 1 80
+wait 31
+tapkey 24 109
+wait 8
+tapkey 10 110
+wait 8
+tapkey 18 100
+wait 9
+tapkey 25 88
+wait 32
+tapkey 23 121
+wait 21
+tapkey 24 91
+wait 7
+tapkey 16 72
+wait 56
+tapkey 23 119
+wait 14
+tapkey 26 91
+wait 43
+tapkey 22 74
+wait 8
+tapkey 19 113
+wait 34
+tapkey 3 86
+wait 60
+tapkey 1 105
+wait 38
+tapkey 4 75
+wait 28
+tapkey 14 77
+wait 47
+tapkey 13 118
+wait 43
+tapkey 8 113
+wait 28
+tapkey 24 127
+wait 57
+tapkey 4 97
+wait 51
+tapkey 4 90
+wait 35
+tapkey 3 124
+wait 24
+tapkey 25 124
+wait 44
+tapkey 11 95
+wait 22
+tapkey 19 84
+wait 45
+tapkey 8 90
+wait 17
+tapkey 7 124
+wait 46
+tapkey 6 65
+wait 45
+tapkey 1 61
+wait 22
+tapkey 8 114
+wait 6
+tapkey 19 64
+wait 11
+tapkey 7 95
+wait 9
+key 0 down 127 60
+key 9 down 127 60
+key 14 down 127 60
+key 20 down 127 60
+key 26 down 127 60
+wait 1200
+key 0 up
+key 9 up
+key 14 up
+key 20 up
+key 26 up
+key 24 down 127 60
+wait 80
+key 2 down 127 60
+wait 80
+key 21 down 127 60
+wait 80
+key 5 down 127 60
+wait 80
+key 17 down 127 60
+wait 80
+key 7 down 127 60
+wait 80
+wait 400
+key 0 up
+key 1 up
+key 2 up
+key 3 up
+key 4 up
+key 5 up
+key 6 up
+key 7 up
+key 8 up
+key 9 up
+key 10 up
+key 11 up
+key 12 up
+key 13 up
+key 14 up
+key 15 up
+key 16 up
+key 17 up
+key 18 up
+key 19 up
+key 20 up
+key 21 up
+key 22 up
+key 23 up
+key 24 up
+key 25 up
+key 26 up
+tap SEQ
+wait 300
+tapkey 20 127
+wait 28
+tapkey 15 127
+wait 35
+tapkey 11 127
+wait 18
+tapkey 10 127
+wait 26
+tapkey 15 127
+wait 13
+tapkey 26 127
+wait 9
+tapkey 25 127
+wait 12
+tapkey 14 127
+wait 18
+tapkey 14 127
+wait 32
+tapkey 23 127
+wait 21
+tapkey 12 127
+wait 14
+tapkey 11 127
+wait 14
+tapkey 20 127
+wait 25
+tapkey 9 127
+wait 40
+tapkey 24 127
+wait 16
+tapkey 13 127
+wait 28
+tapkey 18 127
+wait 11
+tapkey 14 127
+wait 25
+tapkey 2 127
+wait 39
+tapkey 2 127
+wait 32
+tapkey 18 127
+wait 36
+tapkey 26 127
+wait 34
+tapkey 9 127
+wait 5
+tapkey 2 127
+wait 24
+tapkey 6 127
+wait 10
+tapkey 22 127
+wait 24
+tapkey 15 127
+wait 25
+tapkey 9 127
+wait 14
+tapkey 7 127
+wait 27
+tapkey 21 127
+wait 25
+wait 500
+expect voices <13
+expect particles <201
+expect flash_gap >399
+wait 3000
+expect peak_db_max <-3.0
+expect flash_gap >399
+expect voices <13
